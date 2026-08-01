@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Interest Calculator</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .box{
+            width:350px;
+            margin:50px auto;
+            padding:20px;
+            background:white;
+            border:1px solid black;
+        }
+
+        h2{
+            text-align:center;
+        }
+
+        label{
+            font-weight:bold;
+        }
+
+        input{
+            width:95%;
+            padding:8px;
+            margin-top:5px;
+            margin-bottom:12px;
+        }
+
+        button{
+            width:100%;
+            padding:10px;
+            background-color:steelblue;
+            color:white;
+            border:none;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background-color:royalblue;
+        }
+
+        .result{
+            margin-top:20px;
+            padding:10px;
+            border:1px solid gray;
+            background:#f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h2>Simple Interest Calculator</h2>
+
+    <label>Principal Amount</label><br>
+    <input type="number" id="principal">
+
+    <label>Rate of Interest (%)</label><br>
+    <input type="number" id="rate">
+
+    <label>Time (Years)</label><br>
+    <input type="number" id="time">
+
+    <button onclick="calculateInterest()">Calculate</button>
+
+    <div class="result">
+        <h3>Output</h3>
+        <p id="interest">Simple Interest : </p>
+        <p id="total">Total Amount : </p>
+    </div>
+
+</div>
+
+<script>
+
+function calculateInterest(){
+
+    var principal = Number(document.getElementById("principal").value);
+    var rate = Number(document.getElementById("rate").value);
+    var time = Number(document.getElementById("time").value);
+
+    if(principal=="" || rate=="" || time==""){
+        alert("Please enter all values");
+        return;
+    }
+
+    var interest = (principal * rate * time) / 100;
+    var totalAmount = principal + interest;
+
+    document.getElementById("interest").innerHTML =
+    "Simple Interest : " + interest;
+
+    document.getElementById("total").innerHTML =
+    "Total Amount : " + totalAmount;
+
+}
+
+</script>
+
+</body>
+</html>
