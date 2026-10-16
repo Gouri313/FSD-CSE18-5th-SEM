@@ -29,7 +29,7 @@
 // console.log(typeof(a));
 
 const greet = () =>{
-    console.log("Hello Gaurav");
+    console.log("Hello Gouri Parashar");
 }
 
 greet();
